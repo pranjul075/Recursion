@@ -37,7 +37,17 @@ using namespace std;
 //     isSum(arr,size,sum);
 //     return 0;
 // }
+
+void print(int arr[],int size){
+    cout<<"Array is " << size << endl;
+    for(int i=0;i<size;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
 bool isfound(int arr[],int size,int key){
+    print(arr,size);
+  
     //base case
     if(size==0){
         return false;
