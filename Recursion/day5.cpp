@@ -21,19 +21,44 @@ using namespace std;
 //     return 0;
 // }
 
-void isSum(int arr[],int size,int sum){
-    if(size==0){
-        cout<<"sum is"<<sum<<endl;
-        return;
-    }
-    return isSum(arr+1,size-1,sum+arr[0]);
-}
+// void isSum(int arr[],int size,int sum){
+//     if(size==0){
+//         cout<<"sum is"<<sum<<endl;
+//         return;
+//     }
+//     return isSum(arr+1,size-1,sum+arr[0]);
+// }
 
+
+// int main(){
+//     int arr[]={1,2,3,4,5};
+//     int size=5;
+//     int sum=0;
+//     isSum(arr,size,sum);
+//     return 0;
+// }
+bool isfound(int arr[],int size,int key){
+    //base case
+    if(size==0){
+        return false;
+    }
+    if(arr[0]==key){
+        return true;
+    }
+    int ans=isfound(arr+1,size-1,key);
+    return ans;
+}
 
 int main(){
     int arr[]={1,2,3,4,5};
+    int key=3;
     int size=5;
-    int sum=0;
-    isSum(arr,size,sum);
+    bool ans=isfound(arr,size,key);
+    if(ans){
+        cout<<"Key is found"<<endl; 
+    }
+    else{
+        cout<<"Key is not found"<<endl;
+    }
     return 0;
 }
